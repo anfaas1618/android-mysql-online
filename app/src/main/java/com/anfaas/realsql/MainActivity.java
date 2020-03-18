@@ -3,6 +3,7 @@ package com.anfaas.realsql;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -39,12 +40,13 @@ TextView text;
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String s="insert into users(UID,NAME,password,EMAIL)" +
-                        "VALUES(" +
+                String s="insert into users(UID,NAME,password,EMAIL)"
+                        + "VALUES(" +
                         12+",\"" +
-                        name.getText().toString()+"\",\""+password.getText().toString()+"\",\""
+                        name.getText().toString()+"\",\""+
+                        password.getText().toString()+"\",\""
                         +email.getText().toString()+"\")";
-                Log.i("STring",s);
+             //   Log.i("STring",s);
                 regiserSQL();
             }
         });
@@ -58,10 +60,12 @@ TextView text;
             e.printStackTrace();
         }
     }
-
+     public void loginFunc(View view)
+     {
+         startActivity(new Intent(MainActivity.this,LoginActivity.class));
+     }
      void regiserSQL() {
         new Register().execute();
-
     }
     class  Register extends  AsyncTask<Void,Void,Void>
     {
@@ -74,12 +78,12 @@ TextView text;
                 Connection con= DriverManager.getConnection(
                         "jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12328500","sql12328500","cF4cq9Efn3");
                 Statement stmt=con.createStatement();
-                stmt.executeUpdate("insert into users(UID,NAME,password,EMAIL)" +
-                        "VALUES(" +
-                        12+",\"" +
-                        name.getText().toString()+"\",\""+password.getText().toString()+"\",\""
-                        +email.getText().toString()+"\")"
-                );
+                    stmt.executeUpdate("insert into users(UID,NAME,password,EMAIL)" +
+                            "VALUES(" +
+                            2+",\"" +
+                            name.getText().toString()+"\",\""+password.getText().toString()+"\",\""
+                            +email.getText().toString()+"\")"
+                    );
                 con.close();
             }catch(Exception e){ System.out.println(e);}
 
@@ -105,7 +109,6 @@ TextView text;
                 ResultSet set=   stmt.executeQuery("select * from anfi");//there was a table created by me by name anfi
                 set.next();
                  x=  set.getInt(1);//it has only one row with int value.
-
                 System.out.println(x);
                 Log.i("her",""+x);
                 con.close();

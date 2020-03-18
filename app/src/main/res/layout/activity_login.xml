@@ -10,13 +10,6 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="TextView" />
-
-    <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -24,22 +17,14 @@
         android:layout_marginTop="68dp"
         android:layout_gravity="center"
         android:layout_marginEnd="52dp"
-        android:text="register"
+        android:text="login"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="name here"
-        android:layout_gravity="center"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:padding="10dp" />
+
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/l_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -49,7 +34,7 @@
         android:paddingTop="20dp" />
 
     <EditText
-        android:id="@+id/pass"
+        android:id="@+id/l_pass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -59,26 +44,18 @@
         android:paddingTop="20dp" />
 
     <Button
-        android:id="@+id/register"
+        android:id="@+id/login"
         android:layout_gravity="center"
         android:layout_width="237dp"
         android:layout_height="wrap_content"
         android:text="Button" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/name_txt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
-        android:onClick="loginFunc"
-        android:text="Already a user login here..."
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:textSize="30sp"
-        android:textStyle="italic" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="login"
-        android:onClick="loginFunc"
-        android:layout_gravity="center"/>
+        android:textStyle="bold"
+        android:textSize="50dp"
+        android:text="name is" />
+
 </LinearLayout>
