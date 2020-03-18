@@ -47,7 +47,8 @@ public class LoginActivity extends AppCompatActivity {
                         "jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12328500","sql12328500","cF4cq9Efn3");
            Statement stmt = connection.createStatement();
            String a="select * from users where EMAIL=\"" +
-                   email.getText().toString() +"\"";
+                   email.getText().toString() +"\"" +
+                   " and "+"password=\""+password.getText().toString()+"\"";
                 Log.i("loa",a);
        ResultSet set=    stmt.executeQuery(a);
        set.next();
