@@ -16,6 +16,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
@@ -78,9 +79,10 @@ TextView text;
                 Connection con= DriverManager.getConnection(
                         "jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12328500","sql12328500","cF4cq9Efn3");
                 Statement stmt=con.createStatement();
+                UUID uid=UUID.randomUUID();
                     stmt.executeUpdate("insert into users(UID,NAME,password,EMAIL)" +
                             "VALUES(" +
-                            2+",\"" +
+                            uid+",\"" +
                             name.getText().toString()+"\",\""+password.getText().toString()+"\",\""
                             +email.getText().toString()+"\")"
                     );
